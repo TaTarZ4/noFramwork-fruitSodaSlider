@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+    background: #00eaff;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider-box {
+    position: absolute;
+    left: 50%;
+    bottom: -130%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 100vw;
+}
+
+.slider {
+    height: 100%;
+    transform: rotate(90deg);
+    transition: transform 0.5s cubic-bezier(0.87, -1.38, 0.3, 1.54);
+    position: relative;
+}
+.slides {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.slide {
+    position: absolute;
+    left: 0;
+    transform: rotate(calc(90deg * var(--i))) translateX(-60px);
+    transform-origin: 50vw;
+}
+
+.boxFruit{
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    transform: scale(0.2);
+    transition: transform 1s cubic-bezier(0.87, -1.38, 0.3, 1.54);
+}
+
+.imgFruit {
+    animation: infiniteScale 5s infinite;
+}
+
+@keyframes infiniteScale {
+    0% , 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.imgCan {
+    transform: rotate(-90deg);
+    filter: drop-shadow(10px 10px 5px #0000003d);
+}
+
+.button {
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0 5rem;
+}
+
+button {
+    z-index: 100;
+    width: 5rem;
+    height: 4rem;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 2rem;
+    background: #00000067;
+    border: none;
+    filter: drop-shadow(5px 4px 4px #0000003d);
+}
+
+.boxSliderLB {
+    position: absolute;
+    left: 2rem;
+    bottom: 3rem;
+    width: 24rem;
+    background: #0000006d;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.boxSliderLB::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 6rem;
+    width: 6rem;
+    height: 8rem;
+    background: #0000006d;
+}
+
+.sliderLB {
+    display: flex;
+    transform: translateX(calc(-18rem));
+    transition: transform 0.5s cubic-bezier(0.87, -1.38, 0.3, 1.54);
+}
+
+.slidesLB{
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.slideLB {
+    height: 8rem;
+    width: 6rem;
+}
+
+.imgCanLB {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
